@@ -49,6 +49,7 @@ function socket(io) {
                 }
             });
             io.to(roomname).emit('online-users', getUsers(usersTemp))
+            socket.emit('redirect', '/');
         })
     })
 }
