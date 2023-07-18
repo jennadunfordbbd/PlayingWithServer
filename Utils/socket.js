@@ -42,9 +42,8 @@ function socket(io) {
         //Remove user from memory when they disconnect
         socket.on('disconnecting', (data)=>{
             console.log("ROOM NAME " + roomname);
-            var users = users[roomname];
-            console.log("USERS = " + users);
-            console.log("USERS 0 " + users[0]);
+            console.log("HELLO" + users[roomname]);
+
 
             // var users = socket.users;
             // var rooms = Object.keys(socket.rooms);
