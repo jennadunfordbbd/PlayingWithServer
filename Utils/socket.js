@@ -41,17 +41,18 @@ function socket(io) {
     
         //Remove user from memory when they disconnect
         socket.on('disconnecting', ()=>{
-            var rooms = Object.keys(socket.rooms);
-            var socketId = rooms[0];
-            var roomname = rooms[1];
-            users[roomname].forEach((user, index) => {
-                if(user[socketId]){
-                    users[roomname].splice(index, 1)
-                }
-            });
+            console.log("user disconnect but dont remove from array");
+            // var rooms = Object.keys(socket.rooms);
+            // var socketId = rooms[0];
+            // var roomname = rooms[1];
+            // users[roomname].forEach((user, index) => {
+            //     if(user[socketId]){
+            //         users[roomname].splice(index, 1)
+            //     }
+            // });
     
-            //Send online users array
-            io.to(roomname).emit('online-users', getUsers(users[roomname]))
+            // //Send online users array
+            // io.to(roomname).emit('online-users', getUsers(users[roomname]))
         })
     })
 }
