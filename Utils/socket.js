@@ -55,13 +55,15 @@ function socket(io) {
             // var roomname = rooms[1];
             usersTemp.forEach((user, index) => {
                 if(user[socket.id]){
+                    io.to(roomname).emit('user-left', {username: usersTemp[index]});
                     console.log("removinggg");
                     usersTemp.splice(index, 1)
                 }
             });
     
             // // //Send online users array
-            //  io.to(roomname).emit('online-users', getUsers(users[roomname]))
+            
+            io.to(roomname).emit('online-users', getUsers(usersTemp))
         })
     })
 }
