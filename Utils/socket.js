@@ -48,6 +48,8 @@ function socket(io) {
             console.log("LOOK HERE FOR SOCKET ID: " + socket.id);
 
             var rooms = socket.rooms;
+            console.log("ROOMS 0 " + rooms[0]);
+            var users = socket.users;
             // var rooms = Object.keys(socket.rooms);
             var socketId = rooms[0];
             var roomname = rooms[1];
