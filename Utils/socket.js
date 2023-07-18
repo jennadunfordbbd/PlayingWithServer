@@ -46,18 +46,19 @@ function socket(io) {
             console.log("LOOK HERE FOR DATA?? : " + data);
             console.log("LOOK HERE FOR USER: " + socket.user);
             console.log("LOOK HERE FOR SOCKET ID: " + socket.id);
-            console.log("LOOK HERE PLS " + user.roomname );
+
+            var rooms = socket.rooms;
             // var rooms = Object.keys(socket.rooms);
-            // var socketId = rooms[0];
-            // var roomname = rooms[1];
-            // users[roomname].forEach((user, index) => {
-            //     if(user[socketId]){
-            //         users[roomname].splice(index, 1)
-            //     }
-            // });
+            var socketId = rooms[0];
+            var roomname = rooms[1];
+            users[roomname].forEach((user, index) => {
+                if(user[socketId]){
+                    users[roomname].splice(index, 1)
+                }
+            });
     
             // //Send online users array
-            // io.to(roomname).emit('online-users', getUsers(users[roomname]))
+             io.to(roomname).emit('online-users', getUsers(users[roomname]))
         })
     })
 }
