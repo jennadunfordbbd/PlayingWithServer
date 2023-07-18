@@ -12,7 +12,7 @@ var port = process.env.PORT || 3000;
 
 //Render Index page
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('Views/index')
 })
 
 //Start Server
