@@ -48,8 +48,8 @@ function socket(io) {
                     usersTemp.splice(index, 1)
                 }
             });
-            io.to(roomname).emit('online-users', getUsers(usersTemp))
             socket.emit('redirect', '/');
+            io.to(roomname).emit('online-users', getUsers(usersTemp))
         })
     })
 }
