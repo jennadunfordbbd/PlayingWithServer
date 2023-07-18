@@ -41,6 +41,8 @@ function socket(io) {
     
         //Remove user from memory when they disconnect
         socket.on('disconnecting', (data)=>{
+            var users = getUsers();
+            console.log("USERS: " + users[0]);
             console.log("user disconnect but dont remove from array");
             console.log("LOOK HERE FOR SOCKET ID: " + socket.id);
             console.log(socket.data);
