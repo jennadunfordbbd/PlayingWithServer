@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const socket = require('socket.io')
 var cors = require('cors')
+
 
 
 const app = express();
