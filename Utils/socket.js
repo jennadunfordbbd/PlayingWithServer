@@ -43,8 +43,11 @@ function socket(io) {
         socket.on('disconnecting', (data)=>{
             console.log("ROOM NAME " + roomname);
             console.log(users[roomname]);
+            console.log("SOCKET ID: " + socket.id);
 
             let usersTemp = users[roomname];
+
+
 
 
             // var users = socket.users;
@@ -52,7 +55,7 @@ function socket(io) {
             // var socketId = rooms[0];
             // var roomname = rooms[1];
             usersTemp.forEach((user, index) => {
-                if(user[socketId]){
+                if(user[socket.id]){
                     usersTemp.splice(index, 1)
                 }
             });
