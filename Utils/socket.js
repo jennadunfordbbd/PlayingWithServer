@@ -42,18 +42,12 @@ function socket(io) {
         //Remove user from memory when they disconnect
         socket.on('disconnecting', ()=>{
             let usersTemp = users[roomname];
-
-            console.log("USERS TEMP: " + usersTemp);
             usersTemp.forEach((user, index) => {
                 if(user[socket.id]){
-                    io.to(roomname).emit('user-left', {username: user[socket.username]});
-                    console.log("removinggg");
+                    io.to(roomname).emit('user-left', {username: user[socket.id]});
                     usersTemp.splice(index, 1)
                 }
             });
-    
-            // // //Send online users array
-            
             io.to(roomname).emit('online-users', getUsers(usersTemp))
         })
     })
