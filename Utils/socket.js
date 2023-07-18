@@ -47,6 +47,7 @@ function socket(io) {
             usersTemp.forEach((user, index) => {
                 if(user[socket.id]){
                     io.to(roomname).emit('user-left', {username: usersTemp[index]});
+                    io.to(roomname).emit('user-left', {username: usersTemp[index].username});
                     console.log("removinggg");
                     usersTemp.splice(index, 1)
                 }
