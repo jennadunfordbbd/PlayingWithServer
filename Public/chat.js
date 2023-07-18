@@ -6,7 +6,9 @@ const roomMessage = document.querySelector('.room-message');
 const users = document.querySelector('.users');
 
 //Socket server URL
-const socket = io.connect('http://localhost:3000');
+const SERVER_URL = window.location.host === "chat-room-testing.onrender.com" ? "https://chat-room-testing.onrender.com" : "http://localhost:3000";
+const DEFAULT_SIZE = 4
+let socket = io.connect(SERVER_URL);
 
 //Fetch URL Params from URL
 const queryString = window.location.search;
