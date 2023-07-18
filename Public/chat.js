@@ -34,6 +34,7 @@ send.addEventListener('click', () =>{
         roomname: roomname
     })
     message.value = '';
+    console.log("WHAT IS GOING ON HERE");
 })
 
 //Sending username if the user is typing
