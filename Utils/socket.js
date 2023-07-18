@@ -40,8 +40,7 @@ function socket(io) {
         })
     
         //Remove user from memory when they disconnect
-        socket.on('disconnecting', (data)=>{
-
+        socket.on('disconnecting', ()=>{
             let usersTemp = users[roomname];
 
             console.log("USERS TEMP: " + usersTemp);
