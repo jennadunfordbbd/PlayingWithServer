@@ -7,7 +7,7 @@ var cors = require('cors')
 const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
-app.set('views','/views');
+app.set('views','/Views');
 app.set('view engine', 'ejs');
 var port = process.env.PORT || 3000;
 
