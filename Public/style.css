@@ -71,13 +71,12 @@ button {
 }
 
 .users {
-    margin-left: 40px;
-    margin-top: 50px;
+    padding: 2em;
 }
 
 .users p {
-    background-color: rgb(110, 103, 103);
-    color: white;
+    background-color: rgb(237, 148, 148);
+    color: rgb(30, 25, 25);
 }
 
 /* -------------- index.ejs -------------- */
