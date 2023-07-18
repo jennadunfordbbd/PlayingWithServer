@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
-var port = process.env.PORT || 8000;
+var port = process.env.PORT || 3000;
 
 //Render Index page
 app.get('/', (req, res) => {
