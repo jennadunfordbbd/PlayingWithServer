@@ -43,20 +43,21 @@ function socket(io) {
         socket.on('disconnecting', (data)=>{
             console.log("ROOM NAME " + roomname);
             console.log("HELLO" + users[roomname]);
+            var users = users[roomname];
 
 
             // var users = socket.users;
             // var rooms = Object.keys(socket.rooms);
             // var socketId = rooms[0];
             // var roomname = rooms[1];
-            // users[roomname].forEach((user, index) => {
-            //     if(user[socketId]){
-            //         users[roomname].splice(index, 1)
-            //     }
-            // });
+            users[roomname].forEach((user, index) => {
+                if(user[socket.id]){
+                    users[roomname].splice(index, 1)
+                }
+            });
     
             // // //Send online users array
-            //  io.to(roomname).emit('online-users', getUsers(users[roomname]))
+              io.to(roomname).emit('online-users', getUsers(users[roomname]))
         })
     })
 }
