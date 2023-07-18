@@ -49,5 +49,5 @@ app.get('/products/:id', function (req, res, next) {
 })
  
 app.listen(1024, function () {
-  console.log('CORS-enabled web server listening on port 80')
+  console.log('CORS-enabled web server listening on port 1024')
 })
