@@ -43,6 +43,9 @@ function socket(io) {
         socket.on('disconnecting', ()=>{
             console.log("user disconnect but dont remove from array");
             console.log("LOOK HERE: " + Object.keys(socket.rooms));
+            var rooms = Object.keys(socket.rooms);
+            console.log("LOOK HERE2 : " + rooms[0]);
+            console.log("LOOK HERE3 : " + rooms[1]);
             // var rooms = Object.keys(socket.rooms);
             // var socketId = rooms[0];
             // var roomname = rooms[1];
