@@ -44,6 +44,9 @@ function socket(io) {
             console.log("user disconnect but dont remove from array");
             console.log("LOOK HERE: " + data.username);
             console.log("LOOK HERE FOR DATA?? : " + data);
+            console.log("LOOK HERE FOR USER: " + socket.user);
+            console.log("LOOK HERE FOR SOCKET ID: " + socket.id);
+            console.log("LOOK HERE PLS " + user.roomname );
             // var rooms = Object.keys(socket.rooms);
             // var socketId = rooms[0];
             // var roomname = rooms[1];
