@@ -47,6 +47,11 @@ socket.on('joined-user', (data)=>{
     output.innerHTML += '<p>--> <strong><em>' + data.username + ' </strong>has Joined the Room</em></p>';
 })
 
+//Displaying if new user has left the room
+socket.on('user-left',(data)=>{
+    output.innerHTML += '<p>--> <strong><em>' + data.username + ' </strong>has left the Room</em></p>';
+})
+
 //Displaying the message sent from user
 socket.on('chat', (data) => {
     output.innerHTML += '<p><strong>' + data.username + '</strong>: ' + data.message + '</p>';
